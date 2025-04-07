@@ -1,0 +1,93 @@
+body {
+    font-family: sans-serif;
+    padding: 10px;
+    min-width: 250px; /* Ensure the panel has some minimum width */
+}
+
+h1, h2 {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+textarea#snippet-input {
+    width: calc(100% - 16px); /* Account for padding */
+    min-height: 80px;
+    margin-bottom: 10px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    resize: vertical; /* Allow vertical resizing */
+}
+
+button#add-snippet-btn {
+    padding: 8px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-bottom: 15px;
+}
+
+button#add-snippet-btn:hover {
+    background-color: #0056b3;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background-color: #eee;
+    margin: 15px 0;
+}
+
+#snippets-list {
+    margin-top: 10px;
+}
+
+.snippet-item {
+    background-color: #f9f9f9;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    padding: 10px;
+    margin-bottom: 8px;
+    cursor: pointer;
+    position: relative; /* Needed for absolute positioning of the delete button */
+    white-space: pre-wrap; /* Preserve whitespace and line breaks */
+    word-wrap: break-word; /* Ensure long words don't overflow */
+}
+
+.snippet-item:hover {
+    background-color: #f1f1f1;
+}
+
+.snippet-item.copied {
+    background-color: #d4edda; /* Light green feedback */
+    transition: background-color 0.1s ease-in-out;
+}
+
+.delete-btn {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background: #ff4d4d;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    font-size: 12px;
+    line-height: 18px; /* Adjust for vertical centering */
+    text-align: center;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+}
+
+.snippet-item:hover .delete-btn {
+    opacity: 1;
+}
+
+.delete-btn:hover {
+    background: #cc0000;
+}
