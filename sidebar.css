@@ -19,6 +19,18 @@ textarea#snippet-input {
     box-sizing: border-box; /* Include padding and border in the element's total width and height */
     resize: vertical; /* Allow vertical resizing */
 }
+.input-group {
+    display: flex;
+    margin-bottom: 15px;
+    gap: 5px; /* Add space between group input and button */
+}
+
+input#group-input {
+    flex-grow: 1; /* Allow group input to take available space */
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
 
 button#add-snippet-btn {
     padding: 8px 15px;
@@ -27,7 +39,7 @@ button#add-snippet-btn {
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    margin-bottom: 15px;
+    /* margin-bottom removed as it's handled by input-group */
 }
 
 button#add-snippet-btn:hover {
@@ -45,12 +57,53 @@ hr {
     margin-top: 10px;
 }
 
+.snippet-group {
+    margin-bottom: 15px;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    background-color: #ffffff;
+}
+
+.snippet-group h3 {
+    background-color: #f0f0f0;
+    padding: 8px 10px;
+    margin: 0;
+    font-size: 1em;
+    border-bottom: 1px solid #e0e0e0;
+    border-radius: 4px 4px 0 0;
+    display: flex; /* Use flexbox for alignment */
+    justify-content: space-between; /* Space between title and delete button */
+    align-items: center; /* Center items vertically */
+}
+
+.delete-group-btn {
+    background: #ff9999;
+    color: #500;
+    border: none;
+    border-radius: 4px;
+    padding: 2px 6px;
+    font-size: 10px;
+    cursor: pointer;
+    margin-left: 10px; /* Space from group title */
+}
+
+.delete-group-btn:hover {
+    background: #ff4d4d;
+    color: white;
+}
+
+.snippet-group-content {
+    padding: 10px;
+}
+
 .snippet-item {
     background-color: #f9f9f9;
     border: 1px solid #eee;
     border-radius: 4px;
     padding: 10px;
     margin-bottom: 8px;
+    /* Remove background from individual items if group has background */
+    background-color: #f9f9f9;
     cursor: pointer;
     position: relative; /* Needed for absolute positioning of the delete button */
     white-space: pre-wrap; /* Preserve whitespace and line breaks */

@@ -7,7 +7,10 @@
 <body>
     <h1>Clipboard Manager</h1>
     <textarea id="snippet-input" placeholder="Paste or type your snippet here..."></textarea>
-    <button id="add-snippet-btn">Add Snippet</button>
+    <div class="input-group">
+        <input type="text" id="group-input" placeholder="Group name (optional)">
+        <button id="add-snippet-btn">Add Snippet</button>
+    </div>
     <hr>
     <h2>Saved Snippets</h2>
     <div id="snippets-list">
