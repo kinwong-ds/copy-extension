@@ -72,24 +72,57 @@ hr {
     border-bottom: 1px solid #e0e0e0;
     border-radius: 4px 4px 0 0;
     display: flex; /* Use flexbox for alignment */
-    justify-content: space-between; /* Space between title and delete button */
+    justify-content: space-between; /* Space between title and buttons */
     align-items: center; /* Center items vertically */
+    min-height: 24px; /* Ensure consistent height even if buttons wrap slightly */
+}
+
+.snippet-group h3 > span { /* Target the title span specifically */
+    flex-grow: 1; /* Allow title to take available space */
+    margin-right: 10px; /* Space between title and buttons */
+    overflow: hidden; /* Prevent long titles from breaking layout */
+    text-overflow: ellipsis; /* Show ellipsis for overflow */
+    white-space: nowrap; /* Keep title on one line */
+}
+
+.sort-buttons {
+    display: flex;
+    align-items: center;
+    gap: 4px; /* Space between buttons */
+    flex-shrink: 0; /* Prevent button container from shrinking */
+}
+
+.sort-btn {
+    background: #ddd;
+    color: #333;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    padding: 0px 4px;
+    font-size: 12px;
+    line-height: 16px; /* Adjust for better vertical alignment */
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.sort-btn:hover {
+    background: #ccc;
 }
 
 .delete-group-btn {
-    background: #ff9999;
-    color: #500;
-    border: none;
-    border-radius: 4px;
-    padding: 2px 6px;
+    background: #ffcccc; /* Slightly less intense red */
+    color: #700;
+    border: 1px solid #f99;
+    border-radius: 3px;
+    padding: 1px 5px; /* Adjusted padding */
     font-size: 10px;
     cursor: pointer;
-    margin-left: 10px; /* Space from group title */
+    /* margin-left removed, gap in sort-buttons handles spacing */
 }
 
 .delete-group-btn:hover {
-    background: #ff4d4d;
+    background: #ff8080;
     color: white;
+    border-color: #f44;
 }
 
 .snippet-group-content {
